@@ -1,6 +1,6 @@
 {
   "name": "judel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "For javascript key/value storage like react-native async-storage.",
   "main": "index.js",
   "scripts": {

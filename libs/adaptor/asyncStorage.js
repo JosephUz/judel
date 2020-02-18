@@ -17,15 +17,15 @@ AsyncStorage.prototype.removeItem = async function (key = "") {
 }
 
 AsyncStorage.prototype.getAllKeys = async function () {
-    return await AsyncStorage.getAllKeys();
+    return await RNAsyncStorage.getAllKeys();
 }
 
 AsyncStorage.prototype.multiGet = async function (keys = []) {
-    return (await AsyncStorage.multiGet(keys)).map(x => x[1]);
+    return (await RNAsyncStorage.multiGet(keys)).map(x => x[1]);
 }
 
 AsyncStorage.prototype.multiRemove = async function (keys = []) {
-    await AsyncStorage.multiRemove(keys);
+    await RNAsyncStorage.multiRemove(keys);
 }
 
 module.exports = AsyncStorage;
