@@ -1,6 +1,6 @@
 {
   "name": "judel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "For javascript key/value storage like react-native async-storage.",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,5 @@
   "license": "MIT",
   "dependencies": {
     "uuid": "^3.4.0"
-  },
-  "peerDependencies": {
-    "@react-native-community/async-storage": "^1.7.1"
   }
 }

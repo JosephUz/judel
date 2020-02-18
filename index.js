@@ -1,12 +1,13 @@
+const Base = require('./libs/adaptor/base');
+const AsyncStorage = require('./libs/adaptor/asyncStorage'); 
+
 module.exports = {
     Repo: require('./libs/repo/factory'),
     adaptor: {
-        AsyncStorage: function () {
-            const AsyncStorage = require('./libs/adaptor/asyncStorage') 
-            return new AsyncStorage();
+        AsyncStorage: function (RNAsyncStorage) {
+            return new AsyncStorage(RNAsyncStorage);
         },
         Base: function () {
-            const Base = require('./libs/adaptor/base');
             return new Base();
         }
     }
