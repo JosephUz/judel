@@ -10,7 +10,7 @@ function AsyncRepo(name, { adaptor }) {
         return item;
     }
 
-    AsyncRepo.prototype.bulkInsert = async function (items = []) {
+    this.bulkInsert = async function (items = []) {
         await this.adaptor.multiSet(items.map(item => {
             item.id = item.id || uuidv4();
             return [
