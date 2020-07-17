@@ -11,6 +11,16 @@ AsyncRepo.prototype.insert = async function (item = {}) {
     return item;
 }
 
+AsyncRepo.prototype.bulkInsert = async function (items = []) {
+    await this.adaptor.multiSet(items.map(item => {
+        item.id = item.id || uuidv4();
+        return [
+            this.name + item.id,
+            JSON.stringify(item)
+        ];
+    }));
+}
+
 AsyncRepo.prototype.update = async function (item) {
     var old = await this.get(item.id);
     if (old) {

@@ -6,6 +6,17 @@ AsyncStorage.prototype.setItem = async function (key = "", value = "") {
     await this.RNAsyncStorage.setItem(key, value);
 }
 
+AsyncStorage.prototype.multiSet = async function (keyValuePairs = []) {
+    await new Promise((res, rej) => {
+        this.RNAsyncStorage.multiSet(keyValuePairs, err => {
+            if (err)
+                rej(err);
+            else
+                res(keyValuePairs);
+        });
+    });
+}
+
 AsyncStorage.prototype.getItem = async function (key = "") {
     return await this.RNAsyncStorage.getItem(key);
 }

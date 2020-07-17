@@ -8,6 +8,12 @@ Adaptor.prototype.setItem = async function (key = "", value = "") {
     storage[key] = value;
 }
 
+AsyncStorage.prototype.multiSet = async function (keyValuePairs = []) {
+    keyValuePairs.forEach(keyValuePair => {
+        storage[keyValuePair[0]] = keyValuePair[1];
+    });
+}
+
 Adaptor.prototype.getItem = async function (key = "") {
     return storage[key];
 }
