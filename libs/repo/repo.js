@@ -62,8 +62,8 @@ function AsyncRepo(name, { adaptor }) {
             return null;
     }
 
-    this.list = async function () {
-        const keys = (await this.adaptor.getAllKeys()).filter(
+    this.list = async function (keys) {
+        keys = keys || (await this.adaptor.getAllKeys()).filter(
             (key) => key.indexOf(this.name) === 0
         );
         if (keys.length > 0) {
