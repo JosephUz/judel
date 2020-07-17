@@ -11,7 +11,7 @@ function AsyncStorage(RNAsyncStorage) {
                 if (err)
                     rej(err);
                 else
-                    res(keyValuePairs);
+                    res();
             });
         });
     }

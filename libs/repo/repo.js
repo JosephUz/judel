@@ -11,13 +11,15 @@ function AsyncRepo(name, { adaptor }) {
     }
 
     this.bulkInsert = async function (items = []) {
-        await this.adaptor.multiSet(items.map(item => {
+        var keyValuePairs = items.map(item => {
             item.id = item.id || uuidv4();
             return [
                 this.name + item.id,
                 JSON.stringify(item)
             ];
-        }));
+        });
+        await this.adaptor.multiSet(keyValuePairs);
+        return items;
     }
 
     this.update = async function (item) {
